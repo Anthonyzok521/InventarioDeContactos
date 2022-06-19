@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title>Crear</title> 
+</head>
+<body>
+  <main>
+      <div class="intro">
+        <h1 class="bienvenido">Sistema de Inventario</h1>
+        <h2 align="center"> <br>Crear Contacto</h1>
+      </div>
+      <section>
+        <article>
+            <ul>
+              <form name="form" action="/crear.ejs" method="post" autocomplete="off">
+                <li>Nombre: <input id="name" name="name" type="text" value="<%=data.name%>" required maxlength="16"></li>
+                <li>Telf: 
+                  <select id="select">
+                    <option value="0412 ">0412</option>
+                    <option value="0414 ">0414</option>
+                    <option value="0416 ">0416</option>
+                    <option value="0424 ">0424</option>
+                    <option value="0426 ">0426</option>
+                </select> 
+                <input id="operadora" name="operadora" type="text" value="<%=data.operadora%>" hidden>
+                <input id="phone" name="phone" type="tel" value="<%=data.phone%>" required minlength="7" maxlength="7"></li>
+                <li>Debe: 
+                  <input id="debe" type="button" value="No">
+                  <input id="_debe" name="debe" type="text" value="<%=data.debe%>" hidden>
+                </li>
+                <li>Monto de deuda: <div><input id="money" name="bs" type="number" value="<%=data.bs%>"><b>bs</b>
+                    <input id="money" name="dolar" type="number" value="<%=data.dolar%>"><b>$</b>
+                    </div>
+                </li>
+              </form>
+            </ul>
+        </article>
+    </section>
+    <h1 id="msg" aling="center"></h1>
+    <ul class="menu-bar debe">
+      <li id="back"><a href="/" class="home"><i class="fa-solid fa-angle-left"></i></a></li>
+      <li id="create"><i class="fa-solid fa-user-pen"></i></i></li> 
+    </ul>
+  </main>
+</body>
+<script src="https://kit.fontawesome.com/16a0d68baf.js" crossorigin="anonymous"></script>
+<script src="/javascripts/create_contacts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</html>

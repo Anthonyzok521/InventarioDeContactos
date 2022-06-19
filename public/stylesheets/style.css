@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*Código Obtenido de la página: https://www.espai.es/blog/2020/12/como-animar-backgrounds-degradados-en-css/*/
+
+:root{
+  --gradient:  linear-gradient(to right, #ecb475, #f9a852, #f69653, #f38654, #f07654, #ed6856, #ef5956, #ee4c58, #f3443e);
+}
+body{
+  font-family: sans-serif;
+  color: #222;
+  background: beige;
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: fondo-anim 20s infinite alternate;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro{
+  display: flex;
+  background: linear-gradient(top,antiquewhite, 100%, rgba(0,0,0,0), 0%);
+  flex-direction: column;
+  align-items: center;
+  animation: anim_intro 2s ease-in-out alternate both;
+  font-size: 13px;
+}
+
+.bienvenido{
+  text-align: center;
+}
+
+.menu-bar{
+  display: flex;
+  position: fixed;
+  list-style: none;
+  margin-top: 85vh;
+  width: 90%;
+  justify-content: flex-end;
+  font-size: 30px;
+}
+
+.debe{
+  justify-content: space-between;
+}
+
+.menu-bar li{
+  border-radius: 100%;
+  box-shadow: 0px 1px 3px #231;
+  padding: 10px 15px 10px 15px;
+}
+
+#save, #create{
+  background-color: rgba(31, 214, 70, 0.36);
+  text-align: center;
+}
+
+#back{
+  background-color: rgba(22, 184, 248, 0.36);
+  width: 60px;
+  text-align: center;
+}
+
+#menu{
+  background-color: rgb(238, 243, 239);
+}
+
+#debe{
+  width: 30px;
+  height: 20px;
+}
+
+.create, .home, .savecontact{
+  color:#222;
+}
+
+.clientes{
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table{
+  width: 54vh;
+  height: 80vh;
+  border-radius: 10px;
+  background-color: #222;
+  padding: 2px;
+}
+
+table a{
+  color: rgb(10, 0, 148);
+}
+
+tbody{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+  align-content: space-between;
+}
+
+td {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.colums{
+  display: flex;
+  align-items: center;
+}
+
+tr{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  height: 50px;
+}
+
+
+.header-table{
+  background-color: rgb(30, 108, 210);
+  font-weight: 700;
+  margin-bottom: -24px;
+}
+
+.data-table{
+  background-color: rgb(201, 221, 247);
+  font-weight: 300;
+}
+
+section{
+  margin-top: 10%;
+  width: 54vh;
+  height: 40vh;
+  border-radius: 10px;
+  background-color: #222;
+  padding: 2px;
+  color: white;
+}
+
+section ul{
+  list-style: none;
+}
+
+section ul li{
+  margin: 20px 0;
+}
+
+section ul{
+  border-bottom: 2px solid white;
+}
+
+#delete{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#delete i{
+  border-radius: 100%;
+  box-shadow: 0px 1px 3px #231;
+  padding: 10px 15px 10px 15px;
+  background-color: rgba(163, 17, 17, 0.7);
+  height: 40px;
+}
+
+form li {
+  display: flex;
+  justify-content: space-between;
+}
+
+#money{
+  width: 50px;
+  text-align-last: right;
+}
+
+.contact{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgb(91, 91, 255);
+  text-decoration: underline;
+  font-weight: 500;
+  text-align: left;
+}
+
+.contact:hover{
+  color: rgb(0, 0, 255);
+  cursor: pointer;
+}
+
+#back:hover, #create:hover, #save:hover, #delete:hover{
+  color: rgb(246, 246, 253);
+  cursor: pointer;
+}
+
+/* Animaciones */
+
+@keyframes fondo-anim{/* Obtenido de la página para tener efecto en el fondo */
+  0%{background-position: left;} /*por defecto*/
+  100%{background-position: right;}
+}
+
+@keyframes anim_intro {
+
+  0%{
+    margin-top: -100px;
+    border-radius: 0 0 30px 30px;
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0px 1px 30px #231;
+  }
+  99%{
+    margin-top: 0;
+    border-radius: 0 0 10px 10px;
+    padding: 0 8%;
+    background: linear-gradient(to top, rgb(27, 28, 29) 100%, rgba(250, 235, 215, 0) 0px,);
+    box-shadow: 0px 1px 30px #231;
+  }
+  100%{
+    margin-top: 0;
+    border-radius: 0 0 5px 5px;
+    padding: 0 8%;
+    background-color: rgb(32, 32, 32);
+    color: white;
+  }
+  
+}
+
+/* Media Query */
+
+@media screen and (min-width:330px) and (max-width:352px){
+  
+  .intro{
+    width: 99%;
+  }
+
+  table{
+    width: 57vh;
+  }
+}
+
+@media screen and (min-width:352px) and (max-width:375px){
+  
+  .intro{
+    width: 100%;
+  }
+
+  table{
+    width: 60vh;
+  }
+}
+
+@media screen and (min-width:375px) and (max-width:424px){
+  
+  .intro{
+    width: 90%;
+  }
+
+  table{
+    width: 64vh;
+  }
+}
+
+@media screen and (min-width:425px) and (max-width:768px){
+  
+  .intro{
+    width: 78%;
+  }
+
+  table{
+    width: 78vh;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px){
+  
+  table{
+    width: 90vh;
+  }
+}
+
+@media screen and (min-width:1025px){
+
+  table{
+    width: 95vh;
+  }
+}

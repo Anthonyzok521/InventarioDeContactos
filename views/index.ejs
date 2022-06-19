@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title>Inventario</title>
+</head>
+<body>
+  <main>
+    <div class="intro">
+      <h1 class="bienvenido">Sistema de Inventario</h1>
+      <h2 align="center"> <br>Contactos de tus clientes</h1>
+    </div>
+
+    <div class="clientes">
+      <table>
+        <tbody>
+          <tr class="header-table">
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Telf</td>
+            <td>Debe</td>
+          </tr>
+          <% for (let d of data) { %>
+          <tr class="data-table">
+            <td class="colums" align="center" name="contact"><%=d.id%></td>
+            <td class="colums"  align="center">
+              <form name="form" action="/" method="post">
+                <input name="contact" type="text" value="<%=d.name%>" hidden>
+                <button class="contact" onclick="contact()"><%=d.name%></button>
+              </form>
+            </td>
+              <td class="colums" align="center"><%=d.phone %></td>
+            <% if (d.debe == "Si") { %>
+              <td class="colums" align="center"><span style="background-color: green; color: white; padding: 0 5px; border-radius: 100px;"><%=d.debe%></span></td>
+            <% } else { %>
+              <td class="colums" align="center"><span style="background-color: red; color: white; border-radius: 100px"><%=d.debe%></span></td>
+            <% } %>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+      <ul class="menu-bar">
+        <!-- <li id="sign-out"><i class="fa-solid fa-power-off"></i></li>
+        <li id="add"><i class="fa-solid fa-plus"></i></li>  -->
+        <li id="menu"><a href="crear.ejs" class="create"><i class="fa-regular fa-address-card"></i></a></li>
+      </ul>
+    </div>
+  </main>
+</body>
+<script src="https://kit.fontawesome.com/16a0d68baf.js" crossorigin="anonymous"></script>
+<script src="/javascripts/debe_contact.js"></script>
+</html>
