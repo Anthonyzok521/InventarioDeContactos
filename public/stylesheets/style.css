@@ -4,19 +4,13 @@
   box-sizing: border-box;
 }
 
-
-/*Código Obtenido de la página: https://www.espai.es/blog/2020/12/como-animar-backgrounds-degradados-en-css/*/
-
-:root{
-  --gradient:  linear-gradient(to right, #ecb475, #f9a852, #f69653, #f38654, #f07654, #ed6856, #ef5956, #ee4c58, #f3443e);
-}
 body{
   font-family: sans-serif;
   color: #222;
-  background: beige;
-  background-image: var(--gradient);
-  background-size: 400%;
-  animation: fondo-anim 20s infinite alternate;
+  background: rgb(255, 106, 156);
+  background-image: url("/images/orange.jpg");
+  background-size: 400% 200%;
+  background-repeat: no-repeat;
 }
 
 main{
@@ -205,11 +199,6 @@ form li {
 }
 
 /* Animaciones */
-
-@keyframes fondo-anim{/* Obtenido de la página para tener efecto en el fondo */
-  0%{background-position: left;} /*por defecto*/
-  100%{background-position: right;}
-}
 
 @keyframes anim_intro {
 
