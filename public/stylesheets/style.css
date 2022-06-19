@@ -162,6 +162,8 @@ tr{
   background-color: rgb(30, 108, 210);
   font-weight: 700;
   margin-bottom: -24px;
+  align-items: center;
+    font-size: 22px;
 }
 
 .data-table{
