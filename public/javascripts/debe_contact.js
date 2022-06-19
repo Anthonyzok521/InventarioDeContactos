@@ -6,6 +6,7 @@ let msg = document.querySelector("#msg");
 let save = document.querySelector("#save");
 let _delete = document.querySelector("#delete");
 let confirm_delete = document.querySelector("#confirm");
+let main = document.querySelector("main");
 
 window.onload = function () {
     document.form.name.focus(); 
