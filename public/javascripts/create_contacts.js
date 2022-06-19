@@ -2,7 +2,8 @@ let input_name = document.querySelector("#name");
 let input_phone = document.querySelector("#phone");
 let btn_debe = document.querySelector("#debe");
 let input_debe = document.querySelector("#_debe");
-let money = document.querySelector("#money");
+let money_bs = document.querySelector("#money_bs");
+let money_dolar = document.querySelector("#money_dolar");
 let msg = document.querySelector("#msg");
 let create = document.querySelector("#create");
 let select = document.querySelector("#select");
@@ -12,8 +13,6 @@ window.onload = function () {
     document.form.name.focus(); 
     btn_debe.value = "No";
     input_debe.value = "No";
-    input_name.style.border = "1px solid black";
-    input_phone.style.border = "1px solid black";
     msg.style.opacity = "0";
     operadora.value = select.options[select.selectedIndex].value;
 }
@@ -80,20 +79,19 @@ create.addEventListener("click", ()=>{
     
     if (todoCorrecto == true) {
         operadora.value = select.options[select.selectedIndex].value;
-        if(btn_debe.value == "Si" && money.value != ""){
+        if(btn_debe.value == "Si" && money_bs.value != "" || btn_debe.value == "Si" && money_dolar.value != ""){
             formulario.submit(); 
             msg.textContent = "Contacto creado.";
             msg.style.opacity = "1.0";
-        }else{
-            msg.textContent = "Coloca el monto que debe el contacto en Bs y Dólares.";
+        }else if(btn_debe.value == "Si" && money_bs.value == "" || btn_debe.value == "Si" && money_dolar.value == ""){
+            msg.textContent = "Coloca el monto que debe el contacto en Bs o Dólares.";
             msg.style.opacity = "1.0";
         }
-
-        if(btn_debe.value == "No" && money.value == ""){
+        else if(btn_debe.value == "No" && money_bs.value == "" || btn_debe.value == "No" && money_dolar.value == ""){
             formulario.submit(); 
             msg.textContent = "Contacto creado.";
             msg.style.opacity = "1.0";
-        }else{
+        }else if(btn_debe.value == "No" && money_bs.value != "" || btn_debe.value == "No" && money_dolar.value != ""){
             msg.textContent = "¿Si el contacto no debe, para qué colocar un monto?";
             msg.style.opacity = "1.0";
         }

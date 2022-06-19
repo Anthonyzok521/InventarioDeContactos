@@ -1,6 +1,7 @@
 let btn_debe = document.querySelector("#debe");
 let input_debe = document.querySelector("#_debe");
-let money = document.querySelector("#money");
+let money_bs = document.querySelector("#money_bs");
+let money_dolar = document.querySelector("#money_dolar");
 let msg = document.querySelector("#msg");
 let save = document.querySelector("#save");
 let _delete = document.querySelector("#delete");
@@ -9,8 +10,6 @@ let confirm_delete = document.querySelector("#confirm");
 window.onload = function () {
     document.form.name.focus(); 
     btn_debe.value = input_debe.value;
-    input_name.style.border = "1px solid black";
-    input_phone.style.border = "1px solid black";
     msg.style.opacity = "0";
     confirm_delete.value = "";
 }
@@ -76,19 +75,19 @@ save.addEventListener("click", ()=>{
 }
     
     if (todoCorrecto == true) {
-        if(btn_debe.value == "Si" && money.value != ""){
+        if(btn_debe.value == "Si" && money_bs.value != "" || btn_debe.value == "Si" && money_dolar.value != ""){
             formulario.submit(); 
             msg.textContent = "Contacto editado.";
             msg.style.opacity = "1.0";
-        }else if(btn_debe.value == "Si" && money.value == ""){
-            msg.textContent = "Coloca el monto que debe el contacto en Bs y Dólares.";
+        }else if(btn_debe.value == "Si" && money_bs.value == "" || btn_debe.value == "Si" && money_dolar.value == ""){
+            msg.textContent = "Coloca el monto que debe el contacto en Bs o Dólares.";
             msg.style.opacity = "1.0";
         }
-        else if(btn_debe.value == "No" && money.value == ""){
+        else if(btn_debe.value == "No" && money_bs.value == "" && money_dolar.value == ""){
             formulario.submit(); 
             msg.textContent = "Contacto editado.";
             msg.style.opacity = "1.0";
-        }else if(btn_debe.value == "No" && money.value != ""){
+        }else if(btn_debe.value == "No" && money_bs.value != "" || btn_debe.value == "No" && money_dolar.value != ""){
             msg.textContent = "¿Si el contacto no debe, para qué colocar un monto?";
             msg.style.opacity = "1.0";
         }
