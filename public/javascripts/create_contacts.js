@@ -42,7 +42,6 @@ create.addEventListener("click", ()=>{
 
         if (formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
 
-        alert ('Es necesario que el contacto tenga un nombre.');
         formulario[i].style.border = "1px solid red";
         msg.textContent = "Faltó el Nombre.";
         msg.style.opacity = "1.0";
@@ -50,7 +49,7 @@ create.addEventListener("click", ()=>{
 
         }else if (formulario[i].value.length < 2){
 
-            alert ('Que nombre tan raro y corto.');
+            msg.textContent = "Que nombre tan raro y corto.";
             formulario[i].style.border = "1px solid red";
             msg.style.opacity = "1.0";
             todoCorrecto=false;
@@ -63,7 +62,6 @@ create.addEventListener("click", ()=>{
 
         if (formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
 
-        alert ('Coloca el número de teléfono.');
         formulario[i].style.border = "1px solid red";
         msg.textContent = "Faltó el número de teléfono.";
         msg.style.opacity = "1.0";
