@@ -22,7 +22,7 @@ database.run(create, err => {
   }
 });
 /* Base de datos creada con SQLite3 */
-let nm;
+let nm, id;
 /* Al estar en el inicio mostrar los contactos */
 router.get('/', function(req, res, next) {
   const query = "SELECT * FROM contacts;";
@@ -31,21 +31,20 @@ router.get('/', function(req, res, next) {
               return console.error(err.message);
             }
             else{
-              res.render("index.ejs", {data:rows, contact:nm, phone:""});
+              res.render("index.ejs", {data:rows, contact:nm, Id:id, phone:""});
             }
           });
 });
 
 /* Página de que si debe un contacto */
 router.get('/debe.ejs', function(req, res, next) {
-
-  const query = `SELECT * FROM contacts WHERE name = '${nm}';`;
+  const query = `SELECT * FROM contacts WHERE id='${id}';`;
           database.all(query, [], (err, rows) => {
             if(err){
               return console.error(err.message);
             }
             else{
-              res.render("debe.ejs", {data:rows, contact:nm});
+              res.render("debe.ejs", {data:rows, contact:nm, Id:id});
             }
           });
   
@@ -97,6 +96,8 @@ router.post('/debe.ejs', function(req, res, next) {
 /* Para editar los contactos */
 router.post('/', function(req, res, next) {
   nm = req.body.contact;
+  id = req.body.id;
+  console.log(id);
   res.redirect('/debe.ejs');
 });
 

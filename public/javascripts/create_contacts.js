@@ -26,6 +26,8 @@ btn_debe.addEventListener("click", ()=>{
     }else{
         btn_debe.value = "No";
         input_debe.value = "No";
+        money_bs.value = "";
+        money_dolar.value = "";
     }
 
 });

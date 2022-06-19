@@ -161,9 +161,9 @@ tr{
   border-radius: 10px 10px 2px 0px;
   background-color: rgb(30, 108, 210);
   font-weight: 700;
-  margin-bottom: -24px;
+  margin-bottom: 2px;
   align-items: center;
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .data-table{

@@ -25,14 +25,15 @@
           </tr>
           <% for (let d of data) { %>
           <tr class="data-table">
-            <td class="colums" align="center" name="contact"><%=d.id%></td>
+            <td class="colums" align="center" name="id"><%=d.id%></td>
             <td class="colums"  align="center">
               <form name="form" action="/" method="post">
                 <input name="contact" type="text" value="<%=d.name%>" hidden>
+                <input name="id" type="text" value="<%=d.id%>" hidden>
                 <button class="contact" onclick="contact()"><%=d.name%></button>
               </form>
             </td>
-              <td class="colums" align="center"><%=d.phone %></td>
+              <td class="colums" align="center" style="font-weight: 600;"><%=d.phone %></td>
             <% if (d.debe == "Si") { %>
               <td class="colums" align="center"><span style="background-color: green; color: white; padding: 0 5px; border-radius: 100px;"><%=d.debe%></span></td>
             <% } else { %>
