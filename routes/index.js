@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
-const data = path.join(__dirname, "data", "contacts.db");
+const data = path.join(__dirname, "../public/data", "contacts.db");
 const database = new sqlite3.Database(data, err => {
   if(err){
     return console.error(err.message);
