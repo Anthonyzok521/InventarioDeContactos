@@ -17,7 +17,7 @@
         <article>
             <ul>
               <form name="form" action="/crear.ejs" method="post" autocomplete="off">
-                <li>Nombre: <input id="name" name="name" type="text" value="<%=data.name%>" required maxlength="16"></li>
+                <li>Nombre: <input id="name" name="name" type="text" value="<%=data.name%>" onkeypress="return JustLetters(event);" required maxlength="16"></li>
                 <li>Telf: 
                   <select id="select">
                     <option value="0412 ">0412</option>
@@ -27,7 +27,7 @@
                     <option value="0426 ">0426</option>
                 </select> 
                 <input id="operadora" name="operadora" type="text" value="<%=data.operadora%>" hidden>
-                <input id="phone" name="phone" type="tel" value="<%=data.phone%>" required minlength="7" maxlength="7"></li>
+                <input id="phone" name="phone" type="tel" value="<%=data.phone%>" onkeypress="return JustNumbers(event);" required minlength="7" maxlength="7"></li>
                 <li>Debe: 
                   <input id="debe" type="button" value="No">
                   <input id="_debe" name="debe" type="text" value="<%=data.debe%>" hidden>
@@ -52,4 +52,5 @@
 <script src="https://kit.fontawesome.com/16a0d68baf.js" crossorigin="anonymous"></script>
 <script src="/javascripts/create_contacts.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/javascripts/valideKey.js"></script>
 </html>

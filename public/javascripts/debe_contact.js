@@ -1,13 +1,18 @@
-let btn_debe = document.querySelector("#debe");
-let input_debe = document.querySelector("#_debe");
-let money_bs = document.querySelector("#money_bs");
-let money_dolar = document.querySelector("#money_dolar");
-let msg = document.querySelector("#msg");
-let save = document.querySelector("#save");
-let _delete = document.querySelector("#delete");
-let confirm_delete = document.querySelector("#confirm");
-let main = document.querySelector("main");
+/* VARIABLES CON LA ETIQUTAS (DOM) */
+let btn_debe = document.querySelector("#debe"),
+input_phone = document.querySelector("#phone"),
+input_debe = document.querySelector("#_debe"),
+money_bs = document.querySelector("#money_bs"),
+money_dolar = document.querySelector("#money_dolar"),
+select = document.querySelector("#select"),
+operadora = document.querySelector("#operadora"),
+msg = document.querySelector("#msg"),
+save = document.querySelector("#save"),
+_delete = document.querySelector("#delete"),
+confirm_delete = document.querySelector("#confirm"),
+main = document.querySelector("main");
 
+/* AL CARGAR LA PÁGINA QUE ESTÉN ESTOS VALORES POR DEFECTO */
 window.onload = function () {
     document.form.name.focus(); 
     btn_debe.value = input_debe.value;
@@ -15,6 +20,40 @@ window.onload = function () {
     confirm_delete.value = "";
 }
 
+/* VERIFICANDO QUÉ OPERADORA ES */
+    let phone = input_phone.value;
+    let p = "";
+
+    for(let i = 0; i < 4; i++){
+        p += phone[i];
+    }
+
+    if(p == '0412'){
+        select.selectedIndex = 0; 
+        operadora.value = '0412';
+
+    }else if(p == '0414'){
+        select.selectedIndex = 1; 
+        operadora.value = '0414';
+
+    }else if(p == '0416'){
+        select.selectedIndex = 2; 
+        operadora.value = '0416';
+
+    }else if(p == '0424'){
+        select.selectedIndex = 3; 
+        operadora.value = '0424';
+        
+    }else if(p == '0426'){
+        select.selectedIndex = 4; 
+        operadora.value = '0426'
+    }
+    input_phone.value = "";
+    for(let j = 5; j < 12 ; j++){
+        input_phone.value += phone[j];
+    }
+
+/* BOTÓN DE QUE SI DEBE O NO */
 btn_debe.addEventListener("click", ()=>{
 
     if(btn_debe.value == "No"){
@@ -30,6 +69,7 @@ btn_debe.addEventListener("click", ()=>{
 
 });
 
+/* VERIFICANDO LA ENTRADA DE LOS INPUTS ANTES DE GUARDAR */
 save.addEventListener("click", ()=>{  
 
     let todoCorrecto = true;
@@ -66,7 +106,7 @@ save.addEventListener("click", ()=>{
         msg.style.opacity = "1.0";
         todoCorrecto=false;
 
-        }else if (formulario[i].value.length < 7){
+        }else if (formulario[i].value.length < 7 ){
 
             msg.textContent = 'Que número tan raro.';
             formulario[i].style.border = "1px solid red";
@@ -78,6 +118,7 @@ save.addEventListener("click", ()=>{
 }
     
     if (todoCorrecto == true) {
+        input_phone.value = `${select.options[select.selectedIndex].value} ${input_phone.value}`;
         if(btn_debe.value == "Si" && money_bs.value != "" || btn_debe.value == "Si" && money_dolar.value != ""){
             formulario.submit(); 
             msg.textContent = "Contacto editado.";

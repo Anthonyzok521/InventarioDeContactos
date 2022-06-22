@@ -1,14 +1,16 @@
-let input_name = document.querySelector("#name");
-let input_phone = document.querySelector("#phone");
-let btn_debe = document.querySelector("#debe");
-let input_debe = document.querySelector("#_debe");
-let money_bs = document.querySelector("#money_bs");
-let money_dolar = document.querySelector("#money_dolar");
-let msg = document.querySelector("#msg");
-let create = document.querySelector("#create");
-let select = document.querySelector("#select");
-let operadora = document.querySelector("#operadora");
+/* VARIABLES CON LA ETIQUTAS (DOM) */
+let input_name = document.querySelector("#name"),
+input_phone = document.querySelector("#phone"),
+btn_debe = document.querySelector("#debe"),
+input_debe = document.querySelector("#_debe"),
+money_bs = document.querySelector("#money_bs"),
+money_dolar = document.querySelector("#money_dolar"),
+msg = document.querySelector("#msg"),
+create = document.querySelector("#create"),
+select = document.querySelector("#select"),
+operadora = document.querySelector("#operadora");
 
+/* AL CARGAR LA PÁGINA QUE ESTÉN ESTOS VALORES POR DEFECTO */
 window.onload = function () {
     document.form.name.focus(); 
     btn_debe.value = "No";
@@ -17,6 +19,7 @@ window.onload = function () {
     operadora.value = select.options[select.selectedIndex].value;
 }
 
+/* BOTÓN DE QUE SI DEBE O NO */
 btn_debe.addEventListener("click", ()=>{
 
     if(btn_debe.value == "No"){
@@ -32,6 +35,7 @@ btn_debe.addEventListener("click", ()=>{
 
 });
 
+/* VERIFICANDO LA ENTRADA DE LOS INPUTS ANTES DE CREAR */
 create.addEventListener("click", ()=>{  
 
     let todoCorrecto = true;

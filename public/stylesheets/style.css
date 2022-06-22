@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400&display=swap');
+
+/* QUITANDO PROPIEDADES QUE EL NAVEGADOR PONE POR DEFECTO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* ESTABLECIENDO MI DISEÑO */
 
 body{
   font-family: sans-serif;
@@ -105,6 +109,7 @@ main{
 
 .create, .home, .savecontact, #download-database a{
   color:#222;
+  padding: 5px;
 }
 
 .clientes{
